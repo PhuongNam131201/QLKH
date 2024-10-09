@@ -4,7 +4,7 @@ import OptionItem from './OptionItem'
 import color from '../../../contains/color'
 import { enrollCourse } from '../../Services'
 
-export default function DetailSection({courses,enrollCourse}) {
+export default function DetailSection({courses,enrollCourse,userEnrolledCourse}) {
   return (
     <ScrollView>
         <View style={{padding:10,borderRadius:15,backgroundColor:'#fff',marginRight:15}}>
@@ -26,13 +26,14 @@ export default function DetailSection({courses,enrollCourse}) {
       </View>
         <View style={{display:'flex',flexDirection:'column'}}>
             <View>
+                {userEnrolledCourse?.length==0?
                 <TouchableOpacity 
                 onPress={()=>enrollCourse()}
                 style={{padding:20,backgroundColor:color.third,borderRadius:15,alignItems:'center'}}>
                     <Text style={{fontSize:15}}>
                         Nhận khoá học miễn phí
                     </Text>
-                </TouchableOpacity>
+                </TouchableOpacity>:null}
             </View>
             <View style={{marginTop:20}}>
                 <TouchableOpacity style={{padding:20,backgroundColor:color.button,borderRadius:15,alignItems:'center'}}>
