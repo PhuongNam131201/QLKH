@@ -16,18 +16,20 @@ export const getCourseList=async (level) => {
     banner {
       url
     }
-    chapter {
-      id
-      context {
-        html
-        markdown
-        raw
-        text
-      }
-      output {
-        markdown
+   chapter {
+      content {
+        heading
+        output {
+          markdown
+          html
+        }
+        desciption {
+          markdown
+          html
+        }
       }
       title
+      id
     }
     descripsion {
       markdown
@@ -67,10 +69,32 @@ export const getUserEnrolledCourse=async(courseId,userEmail)=>{
     courseId
     completedChapter {
       id
+      chapterId
     }
   }
 }
     `
     const result=await request(MASTER_URL,query)
+    return result;
+}
+export const MarkChapterCompleted=async(chapterId,recordId)=>{
+  const mutationQuery=gql`
+  mutation markChapterCompleted {
+  updateUserConrolledCourse(
+    where: {id: "`+recordId+`"}
+    data: {completedChapter: {create: {data: {chapterId: "`+chapterId+`"}}}}
+  ) {
+    id
+  }
+  publishManyUserConrolledCoursesConnection {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+  `
+  const result=await request(MASTER_URL,mutationQuery)
     return result;
 }
