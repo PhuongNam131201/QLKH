@@ -3,7 +3,8 @@ import React from 'react'
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import color from '../../../contains/color';
-export default function CourseItem({item}) {
+import CourseProgressBar from './CourseProgressBar';
+export default function CourseItem({item,completedChapter}) {
   return (
     <View style={{padding:10,backgroundColor:'#fff',borderRadius:15,marginRight:15}}>
     <Image source={{uri:item?.banner?.url}}
@@ -30,7 +31,12 @@ export default function CourseItem({item}) {
          <Text style={styles.textPrice}>{item?.price==0?'Miễn phí':item.price}</Text>
     </View>
    
-
+     {completedChapter!=undefined? 
+     
+     <CourseProgressBar
+        totalChapter={item?.chapter?.length}
+        completedChapter={completedChapter}
+     />:null}
  </View>
   )
 }

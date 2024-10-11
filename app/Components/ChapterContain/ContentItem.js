@@ -32,7 +32,7 @@ export default function ContentItem({desciption,output}) {
     </TouchableOpacity>:null}
     {isRun?
     <>
-    <Text style={{fontSize:20,fontWeight:'bold'}}>Output</Text>
+    
     <RenderHtml
       contentWidth={width}
       source={outputSource}

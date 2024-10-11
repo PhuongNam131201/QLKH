@@ -17,7 +17,7 @@ export default function CourseDetailScreen() {
   const {isChapterComplete,setIsChapterComplete}=useContext(CompleteChapterContext);
 
   useEffect(()=>{
-    console.log(params.courses);
+    // console.log(params.courses);
     if(user&&params.courses){
       GetUserEnrolledCourse();
     }

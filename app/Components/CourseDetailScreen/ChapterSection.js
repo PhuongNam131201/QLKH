@@ -8,7 +8,7 @@ import { CompleteChapterContext } from '../../Context/CompleteChapter';
 export default function ChapterSection({chapterList,userEnrolledCourse}) {
   const {isChapterComplete,setIsChapterComplete}=useContext(CompleteChapterContext);
   const navigation = useNavigation();
-  console.log(userEnrolledCourse[0]?.completedChapter)
+  // console.log(userEnrolledCourse[0]?.completedChapter)
   const OnChapterPress =(chapter)=>{
     if(userEnrolledCourse.length ==0){
       ToastAndroid.show('Vui lòng đăng ký khoá học trước',ToastAndroid.LONG)

@@ -13,13 +13,13 @@ import { useNavigation } from '@react-navigation/native';
         },[])
         const getCourse=()=>{
             getCourseList(level).then(resp=>{
-                console.log("RESP--",resp);
+                // console.log("RESP--",resp);
                 setCourseList(resp?.courses)
             })
         }
     return (
         <View>
-        <SubHeading text={'Khoá Học ' + (level=='coban'?'Cơ Bản': level) } color={level == 'coban'&&"#fff"}/>
+        <SubHeading text={'Khoá Học ' + (level=='coban'?'Cơ Bản': "Nâng Cao") } color={level == 'coban'&&"#fff"}/>
         <FlatList
             data={courseList}
             key={courseList.id}

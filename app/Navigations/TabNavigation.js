@@ -16,26 +16,26 @@ export default function TabNavigation() {
     <Tab.Navigator screenOptions={{
         headerShown:false
     }}>
-        <Tab.Screen name='HomeScreen' component={HomeScreenNavigation}
+        <Tab.Screen name='Trang chủ' component={HomeScreenNavigation}
             options={{
                 tabBarIcon:({color,size})=>(
                     <Entypo name="home" size={size} color={color} />
                 )
             }}/>
-        <Tab.Screen name='my-course' component={MyCourse}
+        <Tab.Screen name='Khoá học của tôi' component={MyCourse}
         options={{
             tabBarIcon:({color,size})=>(
                 <AntDesign name="book" size={size} color={color} />
                 
             )
         }}/>
-        <Tab.Screen name='leader' component={LeaderBoard}
+        <Tab.Screen name='BXH' component={LeaderBoard}
         options={{
             tabBarIcon:({color,size})=>(
                 <MaterialIcons name="leaderboard" size={size} color={color} />
             )
         }}/>
-        <Tab.Screen name='profile' component={ProfileScreen}
+        <Tab.Screen name='Thông tin' component={ProfileScreen}
         options={{
             tabBarIcon:({color,size})=>(
                 <AntDesign name="profile" size={size} color={color}  />

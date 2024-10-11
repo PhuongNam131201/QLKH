@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function Content({ content,onChapterFinish }) {
   let contentRef;
+  
   const navigation=useNavigation();
   const [activeIndex,setActiveIndex] =useState(0);
   const onNextBtnPress = (index)=>{

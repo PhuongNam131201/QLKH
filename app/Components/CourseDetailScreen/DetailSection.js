@@ -39,7 +39,7 @@ export default function DetailSection({courses,enrollCourse,userEnrolledCourse})
                 <TouchableOpacity style={{padding:20,backgroundColor:color.button,borderRadius:15,alignItems:'center'}}>
                     <Text style={{fontSize:15,color:'#fff'}}>
                         Đăng ký Vip 
-                        500.000 VNĐ/Tháng
+                        100.000 VNĐ/Tháng
                     </Text>
                 </TouchableOpacity>
             </View>
