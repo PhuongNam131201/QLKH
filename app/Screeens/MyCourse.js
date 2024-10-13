@@ -1,4 +1,4 @@
-import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import color from '../../contains/color'
 import { useUser } from '@clerk/clerk-expo';
@@ -22,9 +22,10 @@ export default function MyCourse() {
       
   }
   return (
-    <View>
-      <View style={{height:160,backgroundColor:color.button,padding:30}}>
-        <Text style={{fontSize:30,fontWeight:'bold',color:"#fff",position:'absolute',bottom:30,padding:30}}>Khoá học của tôi</Text>
+    <View style={{flex:1}}>
+      <View style={{height:160,backgroundColor:color.button,padding:30,display:'flex',flexDirection:'row',gap:10,paddingTop:70}}>
+        <Text style={{fontSize:30,fontWeight:'bold',color:"#fff"}}>Khoá học của tôi</Text>
+        <Image source={require('./../../assets/Images/sach.png')} style={{width:70,height:50}}/>
       </View>
       
       <FlatList

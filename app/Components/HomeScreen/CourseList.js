@@ -5,6 +5,7 @@
 
 import CourseItem from './CourseItem';
 import { useNavigation } from '@react-navigation/native';
+import color from '../../../contains/color';
     export default function CourseList({level}) {
         const [courseList,setCourseList] = useState([]);
         const navigation = useNavigation();
@@ -19,7 +20,7 @@ import { useNavigation } from '@react-navigation/native';
         }
     return (
         <View>
-        <SubHeading text={'Khoá Học ' + (level=='coban'?'Cơ Bản': "Nâng Cao") } color={level == 'coban'&&"#fff"}/>
+        <SubHeading text={'Khoá Học ' + (level=='coban'?'Cơ Bản': "Nâng Cao") } color={level == 'coban'&& color.button}/>
         <FlatList
             data={courseList}
             key={courseList.id}
